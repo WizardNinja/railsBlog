@@ -1,15 +1,1 @@
-To-Do:
-1. generate models
-  -User
-  -Post
-  -Comment
-    -polymorphic 
-  -Vote
-
-2. routes
-
-3. Setup User Login
-
-4. Views
-  -create/show posts
-  -create/show comments
+Not entirely sure what this is...
