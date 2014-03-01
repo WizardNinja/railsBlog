@@ -1,0 +1,16 @@
+<div class="comment_area">
+	<li><%= comment.content %></li>
+	<a class="new_comment" href="#">Comment</a>
+	<a href="#">-1</a>
+	<a href="#">+1</a>
+	<form class="comment_form hidden" action="/comments/<%= comment.id %>/comments" method="post">
+		<input type="hidden" name="type" value="<%= comment.class %>">
+		<input type="text" placeholder="reply" name="content">
+		<input type="submit" value="reply">
+	</form>
+	<ul>
+	<% comment.comments.each do |cmmnt| %>
+		<%= render 'comment', comment: cmmnt %>
+	<% end %>
+	</ul>
+</div>

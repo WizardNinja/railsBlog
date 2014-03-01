@@ -1,0 +1,16 @@
+<div class="post_area">
+	<a href="<%= post.url %>"><%= post.title %></a>
+	<a class="down_vote" data-id=<%= post.id %> href="#">-1</a>
+	<a class="up_vote" data-id=<%= post.id %> data-type=<%= post.class %> data-userId=<%= current_user.id %> href="#">+1</a><br>
+	<a class="new_comment" href="#">Comment</a>
+	<form class="comment_form hidden" action="posts/<%= post.id %>/comments" method="post">
+		<input type="hidden" name="type" value="<%= post.class.to_s %>">
+		<input type="text" name="content" placeholder="comment">
+		<input type="submit" value="comment">
+	</form>
+	<ul>
+		<% post.comments.each do |comment| %>
+			<%= render 'comment', comment: comment %>
+		<% end %>
+	</ul>
+</div>
